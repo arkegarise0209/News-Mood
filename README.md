@@ -3,7 +3,7 @@
 
 ### Analysis
 -  The compound polarity scores of the media networks' last 100 tweets (500 tweets) were almost perfectly spread between positive, negative, and neutral scores. 
--  Judging by the negative events happening thoughout the world recently, it is no surprise that all five media networks had a negative polarity scored based on the average compound score for the 100 tweets analyzed. 
+-  Judging by the negative events happening thoughout the world recently, it is no surprise that 4 of the 5 media networks had a negative polarity scored based on the average compound score for the 100 tweets analyzed. 
 -  Not counting the tweets that had a neutral polarity score (0), the majority of the tweets analyzed for each media network either had a polarity score higher than 0.25 or lower than -0.25. Simply put, media networks' tweets, if not neutral, will either be highly positive or highly negative.
 
 
@@ -55,14 +55,13 @@ news_info = {"Screen Name" : [],
 
 
 ```python
-from pprint import pprint
 #Loop through each username in target_users
 for username in target_users:
     
     #Keep track of tweet count
     tweet_count = 0
     
-    #Loop through last 100 tweets (nested loop)
+    #Loop through last 100 tweets 
     for x in range(5):
         #Pull tweets from username's timeline
         public_tweets = api.user_timeline(username, page=x)
@@ -135,16 +134,38 @@ final_news_info.head()
     <tr>
       <th>0</th>
       <td>BBCWorld</td>
+      <td>Skripal poisoning: Russian diplomats leave Was...</td>
+      <td>Sun Apr 01 00:12:27 +0000 2018</td>
+      <td>-0.6124</td>
+      <td>0.000</td>
+      <td>0.500</td>
+      <td>0.500</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BBCWorld</td>
+      <td>Syria war: 'Deal struck' to take critically in...</td>
+      <td>Sat Mar 31 23:59:35 +0000 2018</td>
+      <td>-0.8225</td>
+      <td>0.000</td>
+      <td>0.489</td>
+      <td>0.511</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BBCWorld</td>
       <td>Mali jihadist faces war crimes charges at Inte...</td>
       <td>Sat Mar 31 22:32:48 +0000 2018</td>
       <td>-0.8555</td>
       <td>0.000</td>
       <td>0.540</td>
       <td>0.460</td>
-      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>3</th>
       <td>BBCWorld</td>
       <td>In pictures: Christians celebrate Easter aroun...</td>
       <td>Sat Mar 31 22:06:25 +0000 2018</td>
@@ -152,10 +173,10 @@ final_news_info.head()
       <td>0.316</td>
       <td>0.000</td>
       <td>0.684</td>
-      <td>2</td>
+      <td>4</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>4</th>
       <td>BBCWorld</td>
       <td>French fairground ride hurls man to death http...</td>
       <td>Sat Mar 31 21:15:33 +0000 2018</td>
@@ -163,28 +184,6 @@ final_news_info.head()
       <td>0.000</td>
       <td>0.358</td>
       <td>0.642</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>BBCWorld</td>
-      <td>Mount Everest: Sherpa to attempt record 22nd c...</td>
-      <td>Sat Mar 31 21:05:46 +0000 2018</td>
-      <td>0.0000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>1.000</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>BBCWorld</td>
-      <td>Sri Lankan navy refloats WW2 ship https://t.co...</td>
-      <td>Sat Mar 31 20:29:45 +0000 2018</td>
-      <td>0.0000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>1.000</td>
       <td>5</td>
     </tr>
   </tbody>
